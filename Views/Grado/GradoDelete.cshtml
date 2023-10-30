@@ -1,0 +1,36 @@
+@model ColegioApp.Models.Grado
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Eliminar Grado";
+}
+
+<h2>Eliminar Grado</h2>
+
+<h3>¿Estás seguro de eliminar este Grado?</h3>
+<div>
+    <h4>Detalles del Grado</h4>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfesorID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProfesorID)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm("DeleteConfirmed", "Grado", new { id = Model.Id }, FormMethod.Post))
+    {
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        @Html.ActionLink("Cancelar", "GradoIndex", null, new { @class = "btn btn-default" })
+    }
+</div>

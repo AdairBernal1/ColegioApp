@@ -1,0 +1,36 @@
+@model ColegioApp.Models.AlumnoGrado
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Editar AlumnoGrado";
+}
+
+<h2>Editar AlumnoGrado</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AlumnoID)
+        @Html.EditorFor(model => model.AlumnoID, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.GradoID)
+        @Html.EditorFor(model => model.GradoID, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Seccion)
+        @Html.EditorFor(model => model.Seccion, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+        @Html.ActionLink("Cancelar", "AlumnoGradoIndex", null, new { @class = "btn btn-default" })
+    </div>
+}

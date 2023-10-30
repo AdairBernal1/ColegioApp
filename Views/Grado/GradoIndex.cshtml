@@ -1,0 +1,40 @@
+@model IEnumerable<ColegioApp.Models.Grado>
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Lista de Grados";
+}
+
+<h2>Lista de Grados</h2>
+
+<p>
+    @Html.ActionLink("Agregar Grado", "GradoCreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfesorID)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfesorID)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "GradoUpdate", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "GradoDelete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
