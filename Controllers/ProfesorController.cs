@@ -73,7 +73,7 @@ namespace ColegioApp.Controllers
         }
 
         [HttpPost]
-        [ActionName("ProfesorDelete")]
+        [ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
         public ActionResult ProfesorDeleteConfirmed(int id)
         {

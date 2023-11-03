@@ -61,6 +61,7 @@ namespace ColegioApp.Controllers
             return View("AlumnoUpdate", alumno);
         }
 
+        [HttpGet]
         public ActionResult AlumnoDelete(int id)
         {
             var alumno = db.Alumnos.Find(id);
@@ -71,11 +72,11 @@ namespace ColegioApp.Controllers
             return View("AlumnoDelete", alumno);
         }
 
-        [HttpPost, ActionName("AlumnoDelete")]
+        [HttpPost, ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
         public ActionResult AlumnoDeleteConfirmed(int id)
         {
-            var alumno = db.Alumnos.Find(id);
+            Alumno alumno = db.Alumnos.Find(id);
             db.Alumnos.Remove(alumno);
             db.SaveChanges();
             return RedirectToAction("AlumnoIndex");

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ColegioApp.Models{
     public class Alumno{
@@ -8,7 +9,6 @@ namespace ColegioApp.Models{
         public string Genero {get; set;}
         public DateTime FechaNacimiento{get; set;}
 
-        // Navigation property to AlumnoGrado
     }
 }
 

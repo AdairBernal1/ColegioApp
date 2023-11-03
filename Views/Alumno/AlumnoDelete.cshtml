@@ -6,6 +6,9 @@
     ViewBag.Title = "Eliminar Alumno";
 }
 
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+
+
 <h2>Eliminar Alumno</h2>
 
 <h3>Estas seguro de eliminar a este Alumno?</h3>
@@ -40,10 +43,12 @@
         </dd>
     </dl>
 
-    @using (Html.BeginForm("DeleteConfirmed", "Alumno", new {id = Model.Id}, FormMethod.Post)){
-        <input type="submit" value= "Eliminar" class="btn btn-danger" />
-        @Html.ActionLink("Cancelar", "AlumnoIndex", null, new {@class = "btn btn-default"})
+    @using (Html.BeginForm("DeleteConfirmed", "Alumno", new { id = Model.Id }, FormMethod.Post))
+    {
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        @Html.ActionLink("Cancelar", "AlumnoIndex", null, new { @class = "btn btn-default" })
     }
+
 </div>
 
 

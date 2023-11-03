@@ -75,7 +75,7 @@ namespace ColegioApp.Controllers
         }
 
         [HttpPost]
-        [ActionName("GradoDelete")]
+        [ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
         public ActionResult GradoDeleteConfirmed(int id)
         {
